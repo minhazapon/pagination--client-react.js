@@ -7,16 +7,23 @@ import {
   createBrowserRouter,
   RouterProvider,
 } from "react-router-dom";
+import Root from './Root';
+import Home from './Home';
+import Paginate from './Paginate';
 
 
 const router = createBrowserRouter([
   {
     path: "/",
-    element: <div>Hello world!</div>,
+    element:  <Root></Root> ,
     children: [
       {
-        path: "contacts/:contactId",
-        element: <Contact />,
+        path: "/",
+        element: <Home></Home> ,
+      },
+      {
+        path: "/paginate",
+        element:  <Paginate></Paginate> ,
       },
     ],
   },
